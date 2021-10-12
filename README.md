@@ -1,21 +1,10 @@
 # React-project
+
 Dynamic and functional website showcasing various cocktails.
 
 ## Description
 
-
-
-
-
-
-
-
-
-
-
-
-
-## Technologies 
+## Technologies
 
 - Html5/Css3
 - Javascript
