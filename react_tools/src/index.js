@@ -1,8 +1,14 @@
 import React from "react";
 import ReactDom from "react-dom";
+import "./index.css";
+import App from "./App";
+import { AppProvider } from "./context";
 
-function Test() {
-  return <h4>This is a test1!</h4>;
-}
-
-ReactDom.render(<Test />, document.getElementById("root"));
+ReactDom.render(
+  <React.StrictMode>
+    <AppProvider>
+      <App />
+    </AppProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
