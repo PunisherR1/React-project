@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/space_logo_white.svg";
+import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { useGlobalContext } from "../context";
 
@@ -25,12 +26,14 @@ const Navbar = () => {
       <nav className="nav" onMouseOver={handleSubmenu}>
         <div className="nav-center">
           <div className="nav-header">
-            <img src={logo} className="nav-logo" alt="logo" />
+            <Link to="/">
+              <img src={logo} className="nav-logo" alt="logo" />
+            </Link>
           </div>
           <ul className="nav-links">
             <li>
               <button className="link-btn" onMouseOver={displaySubmenu}>
-                products
+                <Link to="/products">products</Link>
               </button>
             </li>
             <li>

@@ -452,3 +452,29 @@ Stripe Styles
   padding-left: 20px;
   padding-right: 20px;
 }
+.error-page {
+  display: flex;
+  justify-content: center;
+}
+.error-container {
+  text-align: center;
+  text-transform: capitalize;
+}
+.btn-primary {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: white;
+  border: 2px solid;
+  padding: 15px 20px;
+  display: inline-block;
+  transition: var(--mainTransition);
+  cursor: pointer;
+  font-size: 0.9rem;
+  background-color: var(--clr-primary-2);
+  border-radius: 0.75rem;
+  display: inline-block;
+  margin-top: 20px;
+}
+.error-paragraph {
+  margin-top: 300px;
+}
