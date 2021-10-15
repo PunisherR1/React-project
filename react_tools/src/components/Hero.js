@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 
 const Hero = () => {
@@ -14,11 +15,16 @@ const Hero = () => {
               products to capture amazing sights of our Galaxy and share them
               online among fellow enthusiasts.
             </p>
-            <button className="btn btn-long">Show</button>
+            <Link to="/products">
+              <button className="btn btn-long">Show</button>
+            </Link>
           </article>
           <article className="hero-images"></article>
         </div>
       </section>
+      <Link to="/profile">
+        <button>Profile</button>
+      </Link>
     </main>
   );
 };

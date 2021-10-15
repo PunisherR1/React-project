@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Error from "./pages/Error";
+import Profile from "./pages/Profile";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
           <Route path="*">
             <Error />

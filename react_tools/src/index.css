@@ -486,3 +486,32 @@ Stripe Styles
   justify-content: center;
   align-items: center;
 }
+
+/*
+=============== 
+Profile Page
+===============
+*/
+
+.profile {
+  margin: 0 auto;
+  margin-top: 150px;
+  background-color: white;
+  color: black;
+  max-width: 1000px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-flow: column;
+}
+.profile-image {
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.profile hr {
+  width: 100%;
+}
+.p-4 {
+  margin-bottom: 20px;
+}
