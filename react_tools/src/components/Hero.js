@@ -1,5 +1,4 @@
 import React from "react";
-import telescope from "../images/telescope.svg";
 import { useGlobalContext } from "../context";
 
 const Hero = () => {

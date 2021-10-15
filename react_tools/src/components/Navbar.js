@@ -3,9 +3,11 @@ import logo from "../images/space_logo_white.svg";
 import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { useGlobalContext } from "../context";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
   const { openSubmenu, closeSubmenu } = useGlobalContext();
+  const { loginWithRedirect, logout, user, isLoading } = useAuth0();
 
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
@@ -52,7 +54,19 @@ const Navbar = () => {
               </button>
             </li>
           </ul>
-          <button className="btn signin-btn">Log in / Sign up</button>
+          {!isLoading && !user && (
+            <button
+              className="btn signin-btn"
+              onClick={() => loginWithRedirect()}
+            >
+              Log in / Sign up
+            </button>
+          )}
+          {!isLoading && user && (
+            <button className="btn signin-btn" onClick={() => logout()}>
+              Log out
+            </button>
+          )}
         </div>
       </nav>
     </header>

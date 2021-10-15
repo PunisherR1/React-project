@@ -1,9 +1,12 @@
 import React from "react";
+import { products } from "../data";
 
 export default function Products() {
   return (
-    <section>
-      <h1>Info</h1>
-    </section>
+    <main>
+      <section className="width-products">
+        <article className="flex-products"></article>
+      </section>
+    </main>
   );
 }

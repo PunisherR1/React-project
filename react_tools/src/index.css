@@ -478,3 +478,11 @@ Stripe Styles
 .error-paragraph {
   margin-top: 300px;
 }
+.width-products {
+  max-width: 1200px;
+}
+.flex-products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
