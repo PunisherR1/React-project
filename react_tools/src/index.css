@@ -515,3 +515,12 @@ Profile Page
 .p-4 {
   margin-bottom: 20px;
 }
+.button-profile {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: var(--clr-primary-2);
+  border: none;
+  color: white;
+}
