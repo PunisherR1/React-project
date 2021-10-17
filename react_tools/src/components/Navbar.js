@@ -6,14 +6,14 @@ import { useGlobalContext } from "../context";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { openSubmenu, closeSubmenu } = useGlobalContext();
+  const { openSubmenu, closeSubmenu, toggleLinks } = useGlobalContext();
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
 
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 3;
+    const bottom = tempBtn.bottom - 12;
     openSubmenu(page, { center, bottom });
   };
 
@@ -21,6 +21,23 @@ const Navbar = () => {
     if (!e.target.classList.contains("link-btn")) {
       closeSubmenu();
     }
+  };
+  const showSideMenu = () => {
+    toggleLinks();
+  };
+
+  const toggleSubmenu = (e) => {
+    console.log(1);
+    return (
+      <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    );
   };
 
   return (
@@ -63,9 +80,23 @@ const Navbar = () => {
             </button>
           )}
           {!isLoading && user && (
-            <button className="btn signin-btn" onClick={() => logout()}>
-              Log out
-            </button>
+            <div className="links-flex-column">
+              {/* <p>{user.name}</p>
+              <button className="btn signin-btn" onClick={() => logout()}>
+                Log out
+              </button> */}
+              <Link to="/profile">
+                <img
+                  className="login-image"
+                  src={user.picture}
+                  alt=""
+                  onClick={toggleSubmenu}
+                />
+              </Link>
+              <button className="btn" onClick={() => logout()}>
+                Log out
+              </button>
+            </div>
           )}
         </div>
       </nav>

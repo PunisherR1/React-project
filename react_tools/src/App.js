@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
+import Submenu from "./components/Submenu";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
@@ -14,6 +15,7 @@ function App() {
     <Router>
       <Auth0ProviderWithHistory>
         <Navbar />
+        <Submenu />
         <Switch>
           <Route exact path="/">
             <Home />
