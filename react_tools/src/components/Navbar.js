@@ -13,12 +13,19 @@ const Navbar = () => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 12;
+    const bottom = tempBtn.bottom - 10;
     openSubmenu(page, { center, bottom });
+    if (e.target.getElementsByTagName("a")) {
+      const bottom = tempBtn.bottom + 10;
+      openSubmenu(page, { center, bottom });
+    }
   };
 
   const handleSubmenu = (e) => {
-    if (!e.target.classList.contains("link-btn")) {
+    if (
+      !e.target.classList.contains("link-btn") &&
+      !e.target.getElementsByTagName("a")
+    ) {
       closeSubmenu();
     }
   };
