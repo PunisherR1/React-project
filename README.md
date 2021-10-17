@@ -1,6 +1,6 @@
 # React-project
 
-Dynamic and functional website showcasing various cocktails.
+Dynamic and functional website showcasing Space's(company) products, collaboratos and additional info.
 
 ## Description
 
