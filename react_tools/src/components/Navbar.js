@@ -93,12 +93,9 @@ const Navbar = () => {
                 Log out
               </button> */}
               <Link to="/profile">
-                <img
-                  className="login-image"
-                  src={user.picture}
-                  alt=""
-                  onClick={toggleSubmenu}
-                />
+                <p className="login-name" alt="" onClick={toggleSubmenu}>
+                  {user.name}
+                </p>
               </Link>
               <button className="btn" onClick={() => logout()}>
                 Log out

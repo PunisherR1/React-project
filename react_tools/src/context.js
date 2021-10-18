@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useContext, useEffect } from "react";
-import { sublinks } from "./data";
+import { sublinks, products } from "./data";
 import { useCallback } from "react";
 import { useRef } from "react";
 
@@ -13,6 +13,13 @@ const AppProvider = ({ children }) => {
 
   const [telescopes, setTelescopes] = useState([]);
   const [showLinks, setShowLinks] = useState(false);
+
+  /*  const newtelescopes = { products };
+  setTelescopes(newtelescopes);
+
+  /* useEffect(() => {
+    setTelescopes(products);
+  }, [products]);  */
   /*   const linksRef = useRef(null);
   const linksContainerRef = useRef(null); */
 
