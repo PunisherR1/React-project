@@ -4,6 +4,8 @@ Dynamic and functional website showcasing Space's(company) products, collaborato
 
 ## Description
 
+**WORK IN PROGRESS**
+
 ## Technologies
 
 - Html5/Css3
