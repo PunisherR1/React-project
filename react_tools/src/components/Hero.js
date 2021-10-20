@@ -21,9 +21,6 @@ const Hero = () => {
           </article>
           <article className="hero-images"></article>
         </div>
-        <Link to="/profile">
-          <button className="button-profile">Profile</button>
-        </Link>
       </section>
     </main>
   );

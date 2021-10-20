@@ -1,40 +1,38 @@
 import React from "react";
 import logo from "../images/space_logo_white.svg";
 import { Link } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+/* import { FaBars } from "react-icons/fa"; */
 import { useGlobalContext } from "../context";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { openSubmenu, closeSubmenu, toggleLinks } = useGlobalContext();
+  const { openSubmenu, closeSubmenu /* toggleLinks */ } = useGlobalContext();
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
 
+  /* Calculates how close will submenu be to the nav bar */
   const displaySubmenu = (e) => {
     const page = e.target.textContent;
     const tempBtn = e.target.getBoundingClientRect();
     const center = (tempBtn.left + tempBtn.right) / 2;
-    const bottom = tempBtn.bottom - 10;
+    const bottom = tempBtn.bottom + 10;
     openSubmenu(page, { center, bottom });
-    if (e.target.getElementsByTagName("a")) {
-      const bottom = tempBtn.bottom + 10;
-      openSubmenu(page, { center, bottom });
-    }
   };
 
+  /* closes submenu when mouse moves elsewhere */
   const handleSubmenu = (e) => {
     if (
       !e.target.classList.contains("link-btn") &&
-      !e.target.getElementsByTagName("a")
+      !document.getElementsByTagName("a")
     ) {
+      console.log(handleSubmenu);
       closeSubmenu();
     }
   };
-  const showSideMenu = () => {
+  /* const showSideMenu = () => {
     toggleLinks();
-  };
+  }; */
 
   const toggleSubmenu = (e) => {
-    console.log(1);
     return (
       <div class="dropdown">
         <button class="dropbtn">Dropdown</button>
@@ -78,27 +76,26 @@ const Navbar = () => {
               </button>
             </li>
           </ul>
+          {/* displaying based on, if user is logged in or logged out */}
           {!isLoading && !user && (
-            <button
-              className="btn signin-btn"
-              onClick={() => loginWithRedirect()}
-            >
-              Log in / Sign up
-            </button>
+            <div onMouseOver={closeSubmenu}>
+              <button
+                className="btn signin-btn"
+                onClick={() => loginWithRedirect()}
+              >
+                Log in / Sign up
+              </button>
+            </div>
           )}
           {!isLoading && user && (
-            <div className="links-flex-column">
-              {/* <p>{user.name}</p>
-              <button className="btn signin-btn" onClick={() => logout()}>
-                Log out
-              </button> */}
+            <div className="links-flex-column" onMouseOver={closeSubmenu}>
               <Link to="/profile">
                 <p className="login-name" alt="" onClick={toggleSubmenu}>
                   {user.name}
                 </p>
               </Link>
               <button className="btn" onClick={() => logout()}>
-                Log out
+                Logout
               </button>
             </div>
           )}

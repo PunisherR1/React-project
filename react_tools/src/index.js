@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import "./index.css";
 import App from "./App";
 import { AppProvider } from "./context";
-import { BrowserRouter } from "react-router-dom";
+/* import { BrowserRouter } from "react-router-dom"; */
 
 ReactDom.render(
   <React.StrictMode>

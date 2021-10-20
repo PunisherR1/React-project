@@ -10,6 +10,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
   };
 
   return (
+    /* redirects to home page after login in */
     <Auth0Provider
       domain="dev-05zy01hw.us.auth0.com"
       clientId="6JfHxLPHImMXiVsWTBfnbdDsNWzUlxeY"

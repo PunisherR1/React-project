@@ -8,6 +8,7 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = useState({ page: "", links: [] });
   const [location, setLocation] = useState({});
 
@@ -50,6 +51,7 @@ const AppProvider = ({ children }) => {
     }
   }, [showLinks]); */
 
+  /* changes state values */
   const openSubmenu = (text, coordinates) => {
     const page = sublinks.find((link) => link.page === text);
     setPage(page);

@@ -10,6 +10,7 @@ import Submenu from "./components/Submenu";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
+/* Auth0ProviderWithHistory tracks user's session */
 function App() {
   return (
     <Router>

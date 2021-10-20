@@ -8,6 +8,8 @@ const Submenu = () => {
     location,
   } = useGlobalContext();
 
+  /* get's the location of submenu cointainer,
+   and rerenders everytime sumbmenu content is changed */
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");
   useEffect(() => {
@@ -31,6 +33,7 @@ const Submenu = () => {
     >
       <section>
         <h4>{page}</h4>
+        {/* pulls data from array of objects in data.js */}
         <div className={`submenu-center ${columns}`}>
           {links.map((link, index) => {
             const { url, icon, label } = link;
