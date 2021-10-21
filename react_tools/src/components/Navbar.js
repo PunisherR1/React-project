@@ -1,13 +1,15 @@
 import React from "react";
 import logo from "../images/space_logo_white.svg";
+import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 /* import { FaBars } from "react-icons/fa"; */
 import { useGlobalContext } from "../context";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { openSubmenu, closeSubmenu /* toggleLinks */ } = useGlobalContext();
+  const { openSubmenu, closeSubmenu, openSidebar } = useGlobalContext();
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
+  const width = window.innerWidth;
 
   /* Calculates how close will submenu be to the nav bar */
   const displaySubmenu = (e) => {
@@ -27,23 +29,13 @@ const Navbar = () => {
       console.log(handleSubmenu);
       closeSubmenu();
     }
+    if (width < 1000) {
+      closeSubmenu();
+    }
   };
   /* const showSideMenu = () => {
     toggleLinks();
   }; */
-
-  const toggleSubmenu = (e) => {
-    return (
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown</button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <header>
@@ -51,7 +43,12 @@ const Navbar = () => {
         <div className="nav-center">
           <div className="nav-header">
             <Link to="/">
-              <img src={logo} className="nav-logo" alt="logo" />
+              <img
+                src={logo}
+                className="nav-logo"
+                alt="logo"
+                onMouseOver={closeSubmenu}
+              />
             </Link>
           </div>
           <ul className="nav-links">
@@ -90,16 +87,17 @@ const Navbar = () => {
           {!isLoading && user && (
             <div className="links-flex-column" onMouseOver={closeSubmenu}>
               <Link to="/profile">
-                <p className="login-name" alt="" onClick={toggleSubmenu}>
-                  {user.name}
-                </p>
+                <p className="nav-name">{user.name}</p>
               </Link>
-              <button className="btn" onClick={() => logout()}>
+              <button className="btn signin-btn" onClick={() => logout()}>
                 Logout
               </button>
             </div>
           )}
         </div>
+        <button onClick={openSidebar} className="nav-toggle">
+          <FaBars />
+        </button>
       </nav>
     </header>
   );

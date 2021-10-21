@@ -1,22 +1,12 @@
 import React from "react";
-import { products } from "../data";
 import { useGlobalContext } from "../context";
+import TelescopeList from "../components/TelescopeList";
 
-export default function Products({ id, title, price, img }) {
-  const { telescopes } = useGlobalContext();
+export default function Products() {
+  const { closeSubmenu } = useGlobalContext();
   return (
-    <article className="cocktail">
-      <div className="img-container">
-        <img src={img} alt={title} />
-      </div>
-      <div className="cocktail-footer">
-        <h3>{title}</h3>
-        <h4>{price}</h4>
-        {/* <p>{info}</p>
-          <Link to={`/cocktail/${id}`} className="btn btn-primary btn-details">
-            details
-          </Link> */}
-      </div>
-    </article>
+    <main onMouseOver={closeSubmenu}>
+      <TelescopeList />
+    </main>
   );
 }

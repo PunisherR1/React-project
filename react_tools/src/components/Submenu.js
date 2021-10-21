@@ -12,6 +12,7 @@ const Submenu = () => {
    and rerenders everytime sumbmenu content is changed */
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");
+
   useEffect(() => {
     setColumns("col-2");
     const submenu = container.current;

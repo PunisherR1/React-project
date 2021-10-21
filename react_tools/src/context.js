@@ -8,11 +8,12 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [page, setPage] = useState({ page: "", links: [] });
   const [location, setLocation] = useState({});
 
-  const [telescopes, setTelescopes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [telescopes, setTelescopes] = useState({ label: [] });
   const [showLinks, setShowLinks] = useState(false);
 
   /*  const newtelescopes = { products };
@@ -61,14 +62,25 @@ const AppProvider = ({ children }) => {
   const closeSubmenu = () => {
     setIsSubmenuOpen(false);
   };
+
+  const openSidebar = () => {
+    setIsSidebarOpen(true);
+  };
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <AppContext.Provider
       value={{
         isSubmenuOpen,
         telescopes,
+        isSidebarOpen,
         setTelescopes,
         openSubmenu,
         closeSubmenu,
+        openSidebar,
+        closeSidebar,
         page,
         location,
         /*  toggleLinks,

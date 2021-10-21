@@ -7,6 +7,7 @@ import Products from "./pages/Products";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
 import Submenu from "./components/Submenu";
+import Sidebar from "./components/Sidebar";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 

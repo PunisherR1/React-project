@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
+import telescope from "../images/telescope_hero_size0.jpg";
 
 const Hero = () => {
   const { closeSubmenu } = useGlobalContext();
@@ -19,7 +20,9 @@ const Hero = () => {
               <button className="btn btn-long">Show</button>
             </Link>
           </article>
-          <article className="hero-images"></article>
+          <article className="hero-images">
+            <img src={telescope} alt="telescope" />
+          </article>
         </div>
       </section>
     </main>

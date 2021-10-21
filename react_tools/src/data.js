@@ -1,4 +1,11 @@
-import { FaCreditCard, FaBook, FaBriefcase } from "react-icons/fa";
+import {
+  FaCreditCard,
+  FaBook,
+  FaBriefcase,
+  FaPhone,
+  FaUser,
+  FaLocationArrow,
+} from "react-icons/fa";
 import React from "react";
 
 export const products = [
@@ -86,24 +93,25 @@ export const sublinks = [
   {
     page: "astronomers",
     links: [
-      { label: "plugins", icon: <FaBook />, url: "/products" },
-      { label: "libraries", icon: <FaBook />, url: "/products" },
+      { label: "Dr. Schmidt", icon: <FaUser />, url: "/products" },
+      { label: "Prof. Sarkovy", icon: <FaUser />, url: "/products" },
+      { label: "John Smith", icon: <FaUser />, url: "/products" },
       { label: "help", icon: <FaBook />, url: "/products" },
-      { label: "billing", icon: <FaBook />, url: "/products" },
     ],
   },
   {
     page: "company",
     links: [
       { label: "about", icon: <FaBriefcase />, url: "/products" },
-      { label: "customers", icon: <FaBriefcase />, url: "/products" },
+      { label: "clients", icon: <FaBriefcase />, url: "/products" },
     ],
   },
   {
     page: "contact",
     links: [
-      { label: "about", icon: <FaBriefcase />, url: "/products" },
-      { label: "customers", icon: <FaBriefcase />, url: "/products" },
+      { label: "info", icon: <FaPhone />, url: "/products" },
+      { label: "location", icon: <FaLocationArrow />, url: "/products" },
+      { label: "customers", icon: <FaPhone />, url: "/products" },
     ],
   },
 ];
