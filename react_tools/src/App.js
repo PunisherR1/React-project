@@ -18,6 +18,7 @@ function App() {
       <Auth0ProviderWithHistory>
         <Navbar />
         <Submenu />
+        <Sidebar />
         <Switch>
           <Route exact path="/">
             <Home />

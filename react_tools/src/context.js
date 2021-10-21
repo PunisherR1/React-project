@@ -7,8 +7,8 @@ import { useRef } from "react";
 const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const [page, setPage] = useState({ page: "", links: [] });
   const [location, setLocation] = useState({});
 
@@ -63,8 +63,8 @@ const AppProvider = ({ children }) => {
     setIsSubmenuOpen(false);
   };
 
-  const openSidebar = () => {
-    setIsSidebarOpen(true);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
   const closeSidebar = () => {
     setIsSidebarOpen(false);
@@ -79,7 +79,7 @@ const AppProvider = ({ children }) => {
         setTelescopes,
         openSubmenu,
         closeSubmenu,
-        openSidebar,
+        toggleSidebar,
         closeSidebar,
         page,
         location,

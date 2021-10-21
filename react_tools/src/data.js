@@ -5,6 +5,11 @@ import {
   FaPhone,
   FaUser,
   FaLocationArrow,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaBehance,
+  FaSketch,
 } from "react-icons/fa";
 import React from "react";
 
@@ -113,5 +118,33 @@ export const sublinks = [
       { label: "location", icon: <FaLocationArrow />, url: "/products" },
       { label: "customers", icon: <FaPhone />, url: "/products" },
     ],
+  },
+];
+
+export const social = [
+  {
+    id: 1,
+    url: "https://www.twitter.com",
+    icon: <FaFacebook />,
+  },
+  {
+    id: 2,
+    url: "https://www.twitter.com",
+    icon: <FaTwitter />,
+  },
+  {
+    id: 3,
+    url: "https://www.twitter.com",
+    icon: <FaLinkedin />,
+  },
+  {
+    id: 4,
+    url: "https://www.twitter.com",
+    icon: <FaBehance />,
+  },
+  {
+    id: 5,
+    url: "https://www.twitter.com",
+    icon: <FaSketch />,
   },
 ];

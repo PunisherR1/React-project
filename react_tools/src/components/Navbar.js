@@ -7,7 +7,7 @@ import { useGlobalContext } from "../context";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const Navbar = () => {
-  const { openSubmenu, closeSubmenu, openSidebar } = useGlobalContext();
+  const { openSubmenu, closeSubmenu, toggleSidebar } = useGlobalContext();
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
   const width = window.innerWidth;
 
@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
-        <button onClick={openSidebar} className="nav-toggle">
+        <button onClick={toggleSidebar} className="nav-toggle">
           <FaBars />
         </button>
       </nav>
