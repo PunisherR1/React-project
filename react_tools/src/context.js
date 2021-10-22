@@ -1,8 +1,5 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import React, { useState, useContext, useEffect } from "react";
 import { sublinks, products } from "./data";
-import { useCallback } from "react";
-import { useRef } from "react";
 
 const AppContext = React.createContext();
 
@@ -12,16 +9,12 @@ const AppProvider = ({ children }) => {
   const [page, setPage] = useState({ page: "", links: [] });
   const [location, setLocation] = useState({});
 
-  const [loading, setLoading] = useState(true);
-  const [telescopes, setTelescopes] = useState({ label: [] });
+  const [telescopes, setTelescopes] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
   const [showLinks, setShowLinks] = useState(false);
 
-  /*  const newtelescopes = { products };
-  setTelescopes(newtelescopes);
-
-  /* useEffect(() => {
-    setTelescopes(products);
-  }, [products]);  */
   /*   const linksRef = useRef(null);
   const linksContainerRef = useRef(null); */
 
@@ -74,15 +67,19 @@ const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         isSubmenuOpen,
-        telescopes,
-        isSidebarOpen,
-        setTelescopes,
         openSubmenu,
         closeSubmenu,
-        toggleSidebar,
-        closeSidebar,
         page,
         location,
+        telescopes,
+        setTelescopes,
+        loading,
+        setLoading,
+        isSidebarOpen,
+        toggleSidebar,
+        closeSidebar,
+        searchTerm,
+        setSearchTerm,
         /*  toggleLinks,
         linksContainerRef,
         linksRef, */

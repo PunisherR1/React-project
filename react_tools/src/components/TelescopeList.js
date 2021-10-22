@@ -1,27 +1,43 @@
 import React from "react";
 import { products } from "../data";
 import { useGlobalContext } from "../context";
+import Loading from "./Loading";
+import Telescope from "./Telescope";
+import SearchForm from "./SearchForm";
 
 export default function CocktailList() {
-  const { telescopes } = useGlobalContext();
-  /* if (loading) {
+  const { telescopes, loading } = useGlobalContext();
+  console.log(telescopes);
+  if (loading) {
     return <Loading />;
   }
-  if (cocktails.length < 1) {
+  if (telescopes.length < 1) {
     return (
       <h2 className="section-title">
         no cocktails matched your search criteria
       </h2>
     );
-  } */
+  }
+
   return (
     <section className="section">
       <h2 className="section-title">cocktails</h2>
-      <div className="cocktails-center">
+      <div className="telescopes-center">
+        {telescopes.map((item) => {
+          return <Telescope key={item.id} {...item} />;
+        })}
+      </div>
+    </section>
+  );
+
+  /* return (
+    <section className="section">
+      <h2 className="section-title">telescopes</h2>
+      <div className="telescopes-center">
         {products.map((item) => {
           const { id, title, price, img } = item;
           return (
-            <article className="cocktail" key={id}>
+            <article className="telescope" key={id}>
               <div className="img-container ">
                 <img src={img} alt={title} />
               </div>
@@ -31,12 +47,13 @@ export default function CocktailList() {
                 {/* <p>{info}</p>
           <Link to={`/cocktail/${id}`} className="btn btn-primary btn-details">
             details
-          </Link> */}
-              </div>
+          </Link> */
+}
+/* /div>
             </article>
           );
         })}
       </div>
     </section>
   );
-}
+} */
