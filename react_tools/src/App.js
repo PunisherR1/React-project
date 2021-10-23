@@ -8,6 +8,7 @@ import Error from "./pages/Error";
 import Profile from "./pages/Profile";
 import Submenu from "./components/Submenu";
 import Sidebar from "./components/Sidebar";
+import Astronomers from "./pages/Astronomers";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
+          </Route>
+          <Route path="/astronomers">
+            <Astronomers />
           </Route>
           <Route path="/profile">
             <Profile />

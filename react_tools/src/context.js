@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { sublinks, products } from "./data";
+import { sublinks, person } from "./data";
 
 const AppContext = React.createContext();
 
@@ -10,8 +10,11 @@ const AppProvider = ({ children }) => {
   const [location, setLocation] = useState({});
 
   const [telescopes, setTelescopes] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [people, setPeople] = useState(person);
+  const [index, setIndex] = useState(0);
 
   const [showLinks, setShowLinks] = useState(false);
 
@@ -80,6 +83,10 @@ const AppProvider = ({ children }) => {
         closeSidebar,
         searchTerm,
         setSearchTerm,
+        setIndex,
+        index,
+        people,
+        setPeople,
         /*  toggleLinks,
         linksContainerRef,
         linksRef, */

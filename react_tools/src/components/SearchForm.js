@@ -16,7 +16,8 @@ export default function SearchForm() {
       product.title.toString().toLowerCase().includes(searchTerm)
     );
     setTelescopes(results);
-  }, [searchTerm, setTelescopes]);
+    setLoading(false);
+  }, [searchTerm, setTelescopes, setLoading]);
   console.log(setTelescopes);
 
   function handleSubmit(e) {

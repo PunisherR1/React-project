@@ -59,7 +59,7 @@ const Navbar = () => {
             </li>
             <li>
               <button className="link-btn" onMouseOver={displaySubmenu}>
-                astronomers
+                <Link to="/astronomers">astronomers</Link>
               </button>
             </li>
             <li>
