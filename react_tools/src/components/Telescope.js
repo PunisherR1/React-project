@@ -8,7 +8,7 @@ export default function Telescope({ img, title, price }) {
       </div>
       <div className="telescope-footer">
         <h3>{title}</h3>
-        <h4>{price}</h4>
+        <h4>${price}</h4>
       </div>
     </article>
   );
