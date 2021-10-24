@@ -18,6 +18,43 @@ const AppProvider = ({ children }) => {
 
   const [showLinks, setShowLinks] = useState(false);
 
+  /* ***Example of using useCallback funnction when fetchind data from api*** */
+
+  /* const data = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${url}`);
+      const data = await response.json();
+      const { drinks } = data;
+      if (drinks) {
+        const newCocktails = drinks.map((item) => {
+          const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
+            item;
+          return {
+            id: idDrink,
+            name: strDrink,
+            image: strDrinkThumb,
+            info: strAlcoholic,
+            glass: strGlass,
+          };
+        });
+        setCocktails(newCocktails);
+      } else {
+        setCocktails([]);
+      }
+      setLoading(false);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }, [searchTerm]);
+
+  useEffect(() => {
+    fetchDrinks();
+  }, [searchTerm, fetchDrinks]);
+ */
+
   /*   const linksRef = useRef(null);
   const linksContainerRef = useRef(null); */
 
