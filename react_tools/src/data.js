@@ -10,6 +10,7 @@ import {
   FaLinkedin,
   FaBehance,
   FaSketch,
+  FaMoneyBill,
 } from "react-icons/fa";
 import React from "react";
 
@@ -98,25 +99,25 @@ export const sublinks = [
   {
     page: "astronomers",
     links: [
-      { label: "Dr. Schmidt", icon: <FaUser />, url: "/products" },
-      { label: "Prof. Sarkovy", icon: <FaUser />, url: "/products" },
-      { label: "John Smith", icon: <FaUser />, url: "/products" },
-      { label: "help", icon: <FaBook />, url: "/products" },
+      { label: "Dr. Schmidt", icon: <FaUser />, url: "/astronomers" },
+      { label: "Prof. Sarkovy", icon: <FaUser />, url: "/astronomers" },
+      { label: "John Smith", icon: <FaUser />, url: "/astronomers" },
+      { label: "help", icon: <FaBook />, url: "/astronomers" },
     ],
   },
   {
-    page: "company",
+    page: "store",
     links: [
-      { label: "about", icon: <FaBriefcase />, url: "/products" },
-      { label: "clients", icon: <FaBriefcase />, url: "/products" },
+      { label: "pricing", icon: <FaMoneyBill />, url: "/store" },
+      { label: "clients", icon: <FaBriefcase />, url: "/store" },
     ],
   },
   {
     page: "contact",
     links: [
-      { label: "info", icon: <FaPhone />, url: "/products" },
-      { label: "location", icon: <FaLocationArrow />, url: "/products" },
-      { label: "customers", icon: <FaPhone />, url: "/products" },
+      { label: "info", icon: <FaPhone />, url: "/contact" },
+      { label: "location", icon: <FaLocationArrow />, url: "/contact" },
+      { label: "customers", icon: <FaPhone />, url: "/contact" },
     ],
   },
 ];
@@ -124,7 +125,7 @@ export const sublinks = [
 export const social = [
   {
     id: 1,
-    url: "https://www.twitter.com",
+    url: "https://www.facebook.com",
     icon: <FaFacebook />,
   },
   {
@@ -134,17 +135,17 @@ export const social = [
   },
   {
     id: 3,
-    url: "https://www.twitter.com",
+    url: "https://www.linkedin.com",
     icon: <FaLinkedin />,
   },
   {
     id: 4,
-    url: "https://www.twitter.com",
+    url: "https://www.behance.net",
     icon: <FaBehance />,
   },
   {
     id: 5,
-    url: "https://www.twitter.com",
+    url: "https://www.sketch.com",
     icon: <FaSketch />,
   },
 ];

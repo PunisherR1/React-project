@@ -64,7 +64,7 @@ const Navbar = () => {
             </li>
             <li>
               <button className="link-btn" onMouseOver={displaySubmenu}>
-                company
+                <Link to="/store">store</Link>
               </button>
             </li>
             <li>

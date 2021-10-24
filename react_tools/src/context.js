@@ -1,7 +1,22 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, {
+  useState,
+  useContext,
+  useEffect,
+  useReducer,
+  useCallback,
+} from "react";
 import { sublinks, person } from "./data";
+import reducer from "./components/Reducer";
 
+const url = "https://course-api.com/react-useReducer-cart-project";
 const AppContext = React.createContext();
+
+const initialState = {
+  loading: false,
+  cart: [],
+  total: 0,
+  amount: 0,
+};
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,7 +31,60 @@ const AppProvider = ({ children }) => {
   const [people, setPeople] = useState(person);
   const [index, setIndex] = useState(0);
 
-  const [showLinks, setShowLinks] = useState(false);
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const fetchPhones = useCallback(async () => {
+    setLoading(true);
+    try {
+      const response = await fetch(`${url}`);
+      const data = await response.json();
+      console.log(data);
+      const { phones } = data;
+      if (phones) {
+        const newPhones = phones.map((item) => {
+          const { id, title, img, price, amount } = item;
+          return {
+            id,
+            title,
+            img,
+            price,
+            amount,
+          };
+        });
+        state.cart = newPhones;
+      } else {
+        state.cart = [];
+      }
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  }, [state]);
+
+  useEffect(() => {
+    fetchPhones();
+  }, [fetchPhones]);
+
+  const clearCart = () => {
+    dispatch({ type: "CLEAR_CART" });
+  };
+  const remove = (id) => {
+    dispatch({ type: "REMOVE", payload: id });
+  };
+  const increase = (id) => {
+    dispatch({ type: "INCREASE", payload: id });
+  };
+  const decrease = (id) => {
+    dispatch({ type: "DECREASE", payload: id });
+  };
+  const toggleAmount = (id, type) => {
+    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
+  };
+
+  /* useEffect(() => {
+    dispatch({ type: "GET TOTALS" });
+  }, [state.cart, dispatch]); */
 
   /* ***Example of using useCallback funnction when fetchind data from api*** */
 
@@ -124,6 +192,12 @@ const AppProvider = ({ children }) => {
         index,
         people,
         setPeople,
+        ...state,
+        clearCart,
+        remove,
+        increase,
+        decrease,
+        toggleAmount,
         /*  toggleLinks,
         linksContainerRef,
         linksRef, */

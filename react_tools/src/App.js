@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Submenu from "./components/Submenu";
 import Sidebar from "./components/Sidebar";
 import Astronomers from "./pages/Astronomers";
+import Store from "./pages/Store";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/astronomers">
             <Astronomers />
+          </Route>
+          <Route path="/store">
+            <Store />
           </Route>
           <Route path="/profile">
             <Profile />
