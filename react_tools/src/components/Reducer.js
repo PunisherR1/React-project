@@ -2,6 +2,11 @@ const reducer = (state, action) => {
   if (action.type === "CLEAR_CART") {
     return { ...state, cart: [] };
   }
+  if (action.type === "GET_FINAL") {
+    let finalPrice = state.total - state.discount;
+    finalPrice = parseFloat(finalPrice.toFixed(2));
+    return { ...state, finalPrice: finalPrice };
+  }
   if (action.type === "REMOVE") {
     return {
       ...state,
@@ -47,6 +52,14 @@ const reducer = (state, action) => {
 
     return { ...state, total, amount };
   }
+  if (action.type === "GET_DISCOUNT") {
+    let tempPrice = state.total * 0.2;
+    tempPrice = parseFloat(tempPrice.toFixed(2));
+    return { ...state, discount: tempPrice };
+  }
+  /* empPrice = parseFloat(state.total.toFixed(2));
+    return { ...state, discount: tempPrice }; */
+
   if (action.type === "LOADING") {
     return { ...state, loading: true };
   }

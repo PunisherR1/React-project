@@ -1173,7 +1173,7 @@ Cart Item
   transition: var(--transition);
 }
 .remove-btn:hover {
-  color: var(--clr-primary-light);
+  color: var(--clr-grey-6);
 }
 .amount-btn {
   width: 1.5rem;
@@ -1197,4 +1197,31 @@ hr {
   background: var(--clr-grey-5);
   border-color: transparent;
   border-width: 0.25px;
+}
+#discount {
+  color: darkred;
+}
+#final {
+  color: green;
+}
+.cart-empty {
+  display: flex;
+  flex-flow: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--fixed-width);
+}
+.cart-empty h2 {
+  text-align: center;
+  margin-top: 100px;
+}
+.btn-cart-empty {
+  font-size: 1rem;
+  width: 30px;
+  justify-content: center;
+  margin-top: 50px;
+}
+.btn-margin {
+  margin-top: 50px;
 }

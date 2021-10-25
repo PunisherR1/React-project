@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useContext,
-  useEffect,
-  useReducer,
-  useCallback,
-} from "react";
+import React, { useState, useContext, useEffect, useReducer } from "react";
 import { sublinks, person } from "./data";
 import reducer from "./components/Reducer";
 
@@ -16,6 +10,8 @@ const initialState = {
   cart: [],
   total: 0,
   amount: 0,
+  discount: 0,
+  finalPrice: 0,
 };
 
 const AppProvider = ({ children }) => {
@@ -75,6 +71,9 @@ const AppProvider = ({ children }) => {
   const decrease = (id) => {
     dispatch({ type: "DECREASE", payload: id });
   };
+  /* const discount = (id) => {
+    dispatch({ type: "USE_CASH", payload: id });
+  }; */
   const fetchData = async () => {
     dispatch({ type: "LOADING" });
     const response = await fetch(url);
@@ -94,11 +93,19 @@ const AppProvider = ({ children }) => {
     dispatch({ type: "GET_TOTALS" });
   }, [state.cart]);
 
+  useEffect(() => {
+    dispatch({ type: "GET_DISCOUNT" });
+  }, [state.total]);
+
+  useEffect(() => {
+    dispatch({ type: "GET_FINAL" });
+  }, [state.total]);
+
   /* useEffect(() => {
     dispatch({ type: "GET TOTALS" });
   }, [state.cart, dispatch]); */
 
-  /* ***Example of using useCallback funnction when fetchind data from api*** */
+  /* ***Example of using useCallback function when fetchind data from api*** */
 
   /* const data = useCallback(async () => {
     setLoading(true);
@@ -210,6 +217,7 @@ const AppProvider = ({ children }) => {
         increase,
         decrease,
         toggleAmount,
+
         /*  toggleLinks,
         linksContainerRef,
         linksRef, */
