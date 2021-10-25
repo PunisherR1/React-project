@@ -33,7 +33,7 @@ const AppProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const fetchPhones = useCallback(async () => {
+  /* const fetchPhones = useCallback(async () => {
     setLoading(true);
     try {
       const response = await fetch(`${url}`);
@@ -61,10 +61,7 @@ const AppProvider = ({ children }) => {
       setLoading(false);
     }
   }, [state]);
-
-  useEffect(() => {
-    fetchPhones();
-  }, [fetchPhones]);
+ */
 
   const clearCart = () => {
     dispatch({ type: "CLEAR_CART" });
@@ -78,9 +75,24 @@ const AppProvider = ({ children }) => {
   const decrease = (id) => {
     dispatch({ type: "DECREASE", payload: id });
   };
+  const fetchData = async () => {
+    dispatch({ type: "LOADING" });
+    const response = await fetch(url);
+    const cart = await response.json();
+    dispatch({ type: "DISPLAY_ITEMS", payload: cart });
+  };
+
   const toggleAmount = (id, type) => {
     dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    dispatch({ type: "GET_TOTALS" });
+  }, [state.cart]);
 
   /* useEffect(() => {
     dispatch({ type: "GET TOTALS" });

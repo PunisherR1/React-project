@@ -1,7 +1,7 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
 import { FaTimes } from "react-icons/fa";
-import { sublinks, social } from "../data";
+import { sublinks, social } from "../../data";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
 

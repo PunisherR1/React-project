@@ -1,9 +1,7 @@
 import React from "react";
-import { products } from "../data";
-import { useGlobalContext } from "../context";
-import Loading from "./Loading";
+import { useGlobalContext } from "../../context";
+import Loading from "../Loading";
 import Telescope from "./Telescope";
-import SearchForm from "./SearchForm";
 
 export default function CocktailList() {
   const { telescopes, loading } = useGlobalContext();

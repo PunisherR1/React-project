@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 

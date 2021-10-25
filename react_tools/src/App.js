@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
+import Navbar from "./components/menus/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Error from "./pages/Error";
 import Profile from "./pages/Profile";
-import Submenu from "./components/Submenu";
-import Sidebar from "./components/Sidebar";
+import Submenu from "./components/menus/Submenu";
+import Sidebar from "./components/menus/Sidebar";
 import Astronomers from "./pages/Astronomers";
 import Store from "./pages/Store";
 
