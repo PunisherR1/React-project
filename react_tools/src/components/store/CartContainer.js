@@ -1,7 +1,7 @@
 import React from "react";
 import CartItem from "./CartItem";
-import { useGlobalContext } from "../context";
-import Loading from "../components/Loading";
+import { useGlobalContext } from "../../context";
+import Loading from "../Loading";
 
 const CartContainer = () => {
   const { cart, total, clearCart, discount, finalPrice } = useGlobalContext();
@@ -23,7 +23,7 @@ const CartContainer = () => {
     <section className="cart">
       {/* cart header */}
       <header>
-        <h2>your bag</h2>
+        <h2>your cart</h2>
       </header>
       {/* cart items */}
       <div>

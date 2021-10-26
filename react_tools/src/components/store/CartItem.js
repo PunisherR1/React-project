@@ -1,5 +1,5 @@
 import React from "react";
-import { useGlobalContext } from "../context";
+import { useGlobalContext } from "../../context";
 const CartItem = ({ id, img, title, price, amount }) => {
   const { remove, toggleAmount } = useGlobalContext();
   return (
