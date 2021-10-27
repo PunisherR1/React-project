@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../../images/space_logo_white.svg";
 import { FaBars } from "react-icons/fa";
-import { sublinks } from "../../data";
 import { Link } from "react-router-dom";
 /* import { FaBars } from "react-icons/fa"; */
 import { useGlobalContext } from "../../context";
@@ -11,8 +10,6 @@ const Navbar = () => {
   const { openSubmenu, closeSubmenu, toggleSidebar } = useGlobalContext();
   const { loginWithRedirect, logout, user, isLoading } = useAuth0();
   const width = window.innerWidth;
-
-  const { page } = sublinks;
 
   /* Calculates how close will submenu be to the nav bar */
   const displaySubmenu = (e) => {
@@ -72,7 +69,7 @@ const Navbar = () => {
             </li>
             <li>
               <button className="link-btn" onMouseOver={displaySubmenu}>
-                contact
+                <Link to="/form">contact</Link>
               </button>
             </li>
           </ul>

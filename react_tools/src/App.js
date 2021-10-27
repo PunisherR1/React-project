@@ -10,6 +10,7 @@ import Submenu from "./components/menus/Submenu";
 import Sidebar from "./components/menus/Sidebar";
 import Astronomers from "./pages/Astronomers";
 import Store from "./pages/Store";
+import Form from "./pages/Form";
 
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/store">
             <Store />
+          </Route>
+          <Route path="/form">
+            <Form />
           </Route>
           <Route path="/profile">
             <Profile />

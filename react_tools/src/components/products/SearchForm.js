@@ -66,7 +66,7 @@ export default function SearchForm() {
           />
         </div>
       </form>
-      <h2>Most Expensive: ${mostExpensive}</h2>
+      <h3 className="most-exp">Most Expensive: ${mostExpensive}</h3>
     </section>
   );
 }

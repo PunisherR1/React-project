@@ -1,10 +1,10 @@
 import React from "react";
 import CartItem from "./CartItem";
-import { useGlobalContext } from "../../context";
+import { useCartContext } from "./CartContext";
 import Loading from "../Loading";
 
 const CartContainer = () => {
-  const { cart, total, clearCart, discount, finalPrice } = useGlobalContext();
+  const { cart, total, clearCart, discount, finalPrice } = useCartContext();
   if (cart.length === 0) {
     return (
       <div className="cart-empty">

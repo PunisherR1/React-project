@@ -1,18 +1,7 @@
-import React, { useState, useContext, useEffect, useReducer } from "react";
+import React, { useState, useContext } from "react";
 import { sublinks, person } from "./data";
-import reducer from "./components/store/Reducer";
 
-const url = "https://course-api.com/react-useReducer-cart-project";
 const AppContext = React.createContext();
-
-const initialState = {
-  loading: false,
-  cart: [],
-  total: 0,
-  amount: 0,
-  discount: 0,
-  finalPrice: 0,
-};
 
 const AppProvider = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,151 +15,6 @@ const AppProvider = ({ children }) => {
 
   const [people, setPeople] = useState(person);
   const [index, setIndex] = useState(0);
-
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  /* const fetchPhones = useCallback(async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`${url}`);
-      const data = await response.json();
-      console.log(data);
-      const { phones } = data;
-      if (phones) {
-        const newPhones = phones.map((item) => {
-          const { id, title, img, price, amount } = item;
-          return {
-            id,
-            title,
-            img,
-            price,
-            amount,
-          };
-        });
-        state.cart = newPhones;
-      } else {
-        state.cart = [];
-      }
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  }, [state]);
- */
-
-  const clearCart = () => {
-    dispatch({ type: "CLEAR_CART" });
-  };
-  const remove = (id) => {
-    dispatch({ type: "REMOVE", payload: id });
-  };
-  const increase = (id) => {
-    dispatch({ type: "INCREASE", payload: id });
-  };
-  const decrease = (id) => {
-    dispatch({ type: "DECREASE", payload: id });
-  };
-  /* const discount = (id) => {
-    dispatch({ type: "USE_CASH", payload: id });
-  }; */
-  const fetchData = async () => {
-    dispatch({ type: "LOADING" });
-    const response = await fetch(url);
-    const cart = await response.json();
-    dispatch({ type: "DISPLAY_ITEMS", payload: cart });
-  };
-
-  const toggleAmount = (id, type) => {
-    dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
-    dispatch({ type: "GET_TOTALS" });
-  }, [state.cart]);
-
-  useEffect(() => {
-    dispatch({ type: "GET_DISCOUNT" });
-  }, [state.total]);
-
-  useEffect(() => {
-    dispatch({ type: "GET_FINAL" });
-  }, [state.total]);
-
-  /* useEffect(() => {
-    dispatch({ type: "GET TOTALS" });
-  }, [state.cart, dispatch]); */
-
-  /* ***Example of using useCallback function when fetchind data from api*** */
-
-  /* const data = useCallback(async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`${url}`);
-      const data = await response.json();
-      const { drinks } = data;
-      if (drinks) {
-        const newCocktails = drinks.map((item) => {
-          const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } =
-            item;
-          return {
-            id: idDrink,
-            name: strDrink,
-            image: strDrinkThumb,
-            info: strAlcoholic,
-            glass: strGlass,
-          };
-        });
-        setCocktails(newCocktails);
-      } else {
-        setCocktails([]);
-      }
-      setLoading(false);
-      console.log(data);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  }, [searchTerm]);
-
-  useEffect(() => {
-    fetchDrinks();
-  }, [searchTerm, fetchDrinks]);
- */
-
-  /*   const linksRef = useRef(null);
-  const linksContainerRef = useRef(null); */
-
-  /* const toggleLinks = () => {
-    setShowLinks(!showLinks);
-    return (
-      <div className="links-container" ref={linksContainerRef}>
-        <ul className="links" ref={linksRef}>
-          {user.map((user, index) => {
-            const { id, name, email } = user;
-            return (
-              <li key={index} {...user}>
-                <a href="#">{name}</a>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  }; */
-
-  /* useEffect(() => {
-    const linksHeight = linksRef.current.getBoundingClientRect().height;
-    if (showLinks) {
-      linksContainerRef.current.style.height = `${linksHeight}px`;
-    } else {
-      linksContainerRef.current.style.height = "0px";
-    }
-  }, [showLinks]); */
 
   /* changes state values */
   const openSubmenu = (text, coordinates) => {
@@ -211,16 +55,6 @@ const AppProvider = ({ children }) => {
         index,
         people,
         setPeople,
-        ...state,
-        clearCart,
-        remove,
-        increase,
-        decrease,
-        toggleAmount,
-
-        /*  toggleLinks,
-        linksContainerRef,
-        linksRef, */
       }}
     >
       {children}
