@@ -69,7 +69,7 @@ const Navbar = () => {
             </li>
             <li>
               <button className="link-btn" onMouseOver={displaySubmenu}>
-                <Link to="/form">contact</Link>
+                <Link to="/contact">contact</Link>
               </button>
             </li>
           </ul>

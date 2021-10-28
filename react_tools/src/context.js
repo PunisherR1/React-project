@@ -16,7 +16,8 @@ const AppProvider = ({ children }) => {
   const [people, setPeople] = useState(person);
   const [index, setIndex] = useState(0);
 
-  /* changes state values */
+  /* changes state values if text value of page property
+  is the same as the text values in navbar*/
   const openSubmenu = (text, coordinates) => {
     const page = sublinks.find((link) => link.page === text);
     setPage(page);

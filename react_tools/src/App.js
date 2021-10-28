@@ -15,6 +15,7 @@ import Form from "./pages/Form";
 import Auth0ProviderWithHistory from "./components/Auth0Provider.js";
 
 /* Auth0ProviderWithHistory tracks user's session */
+/* components before switch component are loaded onto every page */
 function App() {
   return (
     <Router>
@@ -35,7 +36,7 @@ function App() {
           <Route path="/store">
             <Store />
           </Route>
-          <Route path="/form">
+          <Route path="/contact">
             <Form />
           </Route>
           <Route path="/profile">

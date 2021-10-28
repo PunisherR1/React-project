@@ -1239,7 +1239,7 @@ Form Page
   width: 45%;
   /* float: left; */
   height: 460px;
-  background: #e6e6e6;
+  background: white;
   border-radius: 8px;
   box-shadow: 0 0 40px -10px #000;
   margin: 0px auto;
@@ -1254,8 +1254,8 @@ Form Page
   margin: 10px 0;
   padding-bottom: 10px;
   width: 180px;
-  color: #78788c;
-  border-bottom: 3px solid #78788c;
+  color: var(--clr-grey-5);
+  border-bottom: 3px solid var(--clr-grey-8);
 }
 .form input {
   width: 100%;
@@ -1267,7 +1267,7 @@ Form Page
   border: 0;
   font-family: "Montserrat", sans-serif;
   transition: all 0.3s;
-  border-bottom: 2px solid #bebed2;
+  border-bottom: 2px solid var(--clr-primary-7);
 }
 .form input:focus {
   border-bottom: 2px solid #78788c;
@@ -1284,14 +1284,14 @@ Form Page
   padding: 6px 12px;
   margin: 8px 0 0;
   font-family: "Montserrat", sans-serif;
-  border: 2px solid #78788c;
+  border: 2px solid var(--clr-primary-7);
   background: 0;
   color: #5a5a6e;
   cursor: pointer;
   transition: all 0.3s;
 }
 .form button:hover {
-  background: #78788c;
+  background: var(--clr-primary-6);
   color: #fff;
 }
 .form div {
@@ -1299,7 +1299,7 @@ Form Page
   position: absolute;
   bottom: -42px;
   right: 8px;
-  background: #50505a;
+  background: var(--clr-primary-4);
   color: #fff;
   width: 320px;
   padding: 16px 4px 16px 0;
@@ -1321,11 +1321,14 @@ Form Page
   flex-flow: row;
   justify-content: center;
 }
+.form-hr {
+  background: var(--clr-primary-7);
+}
 .form-display {
   /*  float: left; */
   width: 45%;
   height: 460px;
-  background: #e6e6e6;
+  background: white;
   border-radius: 8px;
   box-shadow: 0 0 40px -10px #000;
   margin: 0px auto;
@@ -1333,6 +1336,7 @@ Form Page
   padding: 20px 30px;
   /* max-width: calc(100vw - 40px); */
   box-sizing: border-box;
+  color: var(--clr-grey-3);
   font-family: "Montserrat", sans-serif;
 }
 @media screen and (max-width: 800px) {

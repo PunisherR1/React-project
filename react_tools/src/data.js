@@ -14,6 +14,7 @@ import {
 } from "react-icons/fa";
 import React from "react";
 
+/* data for products page */
 export const products = [
   {
     id: 1,
@@ -87,6 +88,7 @@ export const products = [
   },
 ];
 
+/* data for navbar links and submenu links */
 export const sublinks = [
   {
     page: "products",
@@ -100,8 +102,8 @@ export const sublinks = [
     page: "astronomers",
     links: [
       { label: "Dr. Schmidt", icon: <FaUser />, url: "/astronomers" },
-      { label: "Prof. Sarkovy", icon: <FaUser />, url: "/astronomers" },
-      { label: "John Smith", icon: <FaUser />, url: "/astronomers" },
+      { label: "Prof. Ferguson", icon: <FaUser />, url: "/astronomers" },
+      { label: "Peter Smith", icon: <FaUser />, url: "/astronomers" },
       { label: "help", icon: <FaBook />, url: "/astronomers" },
     ],
   },
@@ -122,6 +124,7 @@ export const sublinks = [
   },
 ];
 
+/* data for sidebar social icons */
 export const social = [
   {
     id: 1,
@@ -150,6 +153,7 @@ export const social = [
   },
 ];
 
+/* data for astronomers page */
 export const person = [
   {
     id: 1,
@@ -182,7 +186,7 @@ export const person = [
     id: 4,
     image:
       "https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg",
-    name: "susan andersen",
+    name: "susan schmidt",
     title: "amateur astronomer",
     quote:
       "“Imagination is the real and eternal world of which this vegetable universe is but a faint shadow.”",

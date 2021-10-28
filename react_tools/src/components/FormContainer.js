@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 const Form = () => {
-  /* const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState(""); */
   const [person, setPerson] = useState({
     name: "",
     email: "",
@@ -12,26 +9,8 @@ const Form = () => {
   });
   const [people, setPeople] = useState([]);
 
-  /* const handleSubmit = (e) => {
-    e.preventDefault();
-    if (name && email && message) {
-      const person = {
-        id: new Date().getTime().toString(),
-        name,
-        email,
-        message,
-      };
-      console.log(person);
-      setPeople((people) => {
-        return [...people, person];
-      });
-      setEmail("");
-      setMessage("");
-      setName("");
-    } else {
-      console.log("Empty values");
-    } 
-  };*/
+  /* Every time user types into input field,
+  corresponding name attribute gets it's value assigned */
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -44,7 +23,7 @@ const Form = () => {
       setPeople([...people, newPerson]);
       setPerson({ name: "", email: "", message: "" });
     }
-    if (people.length > 2) {
+    if (people.length >= 3) {
       setPeople([]);
     }
   };
@@ -105,7 +84,7 @@ const Form = () => {
               <h4>{name}</h4>
               <p>{email}</p>
               <p>{message}</p>
-              <hr />
+              <hr className="form-hr" />
             </div>
           );
         })}
