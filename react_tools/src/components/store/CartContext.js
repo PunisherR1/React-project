@@ -13,6 +13,7 @@ const initialState = {
   finalPrice: 0,
 };
 
+/* separate context just for store page and it's states */
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
@@ -36,6 +37,7 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };
 
+  /* sends payload to reducer together with it's id and type('inc' or 'dec') */
   const toggleAmount = (id, type) => {
     dispatch({ type: "TOGGLE_AMOUNT", payload: { id, type } });
   };
@@ -48,6 +50,7 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "GET_TOTALS" });
   }, [state.cart]);
 
+  /* calculate the discount and final price every time total value changes */
   useEffect(() => {
     dispatch({ type: "GET_DISCOUNT" });
   }, [state.total]);

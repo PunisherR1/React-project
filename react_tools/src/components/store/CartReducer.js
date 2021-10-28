@@ -5,9 +5,10 @@ const reducer = (state, action) => {
   if (action.type === "GET_FINAL") {
     let finalPrice = state.total - state.discount;
     finalPrice = parseFloat(finalPrice.toFixed(2));
-    return { ...state, finalPrice: finalPrice };
+    return { ...state, finalPrice };
   }
   if (action.type === "REMOVE") {
+    /* returns all items that are not equal to payload id */
     return {
       ...state,
       cart: state.cart.filter((cartItem) => cartItem.id !== action.payload),
@@ -30,10 +31,12 @@ const reducer = (state, action) => {
         }
         return cartItem;
       })
+      /* deletes the item if it's amount reaches zero */
       .filter((cartItem) => cartItem.amount !== 0);
     return { ...state, cart: tempCart };
   }
   if (action.type === "GET_TOTALS") {
+    /* returns cartTotal object which has different total and amount values */
     let { total, amount } = state.cart.reduce(
       (cartTotal, cartItem) => {
         const { price, amount } = cartItem;
@@ -57,8 +60,6 @@ const reducer = (state, action) => {
     tempPrice = parseFloat(tempPrice.toFixed(2));
     return { ...state, discount: tempPrice };
   }
-  /* empPrice = parseFloat(state.total.toFixed(2));
-    return { ...state, discount: tempPrice }; */
 
   if (action.type === "LOADING") {
     return { ...state, loading: true };
@@ -67,6 +68,8 @@ const reducer = (state, action) => {
     return { ...state, cart: action.payload, loading: false };
   }
   if (action.type === "TOGGLE_AMOUNT") {
+    /* increases or decreases amount of specific item,
+     looks for payload.type in dispatch function */
     let tempCart = state.cart
       .map((cartItem) => {
         if (cartItem.id === action.payload.id) {

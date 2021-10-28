@@ -2,7 +2,6 @@ import React from "react";
 import logo from "../../images/space_logo_white.svg";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-/* import { FaBars } from "react-icons/fa"; */
 import { useGlobalContext } from "../../context";
 import { useAuth0 } from "@auth0/auth0-react";
 
@@ -33,9 +32,6 @@ const Navbar = () => {
       closeSubmenu();
     }
   };
-  /* const showSideMenu = () => {
-    toggleLinks();
-  }; */
 
   return (
     <header>

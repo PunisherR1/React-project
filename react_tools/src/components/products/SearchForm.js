@@ -13,6 +13,7 @@ export default function SearchForm() {
     setSearchTerm(e.target.value);
   };
 
+  /* returns products which are represented by letters in search bar */
   useEffect(() => {
     const results = products.filter((product) =>
       product.title.toString().toLowerCase().includes(searchTerm)
@@ -33,15 +34,13 @@ export default function SearchForm() {
     }, 0);
   };
 
+  /* calculates most expensive item everytime telescope array is changed */
   const mostExpensive = useMemo(
     () => calculateMostExpensive(telescopes),
     [telescopes]
   );
 
-  /* useEffect(() => {
-    calculateMostExpensive();
-  }, [searchTerm, calculateMostExpensive]); */
-
+  /* clears the search bar when switching pages */
   useEffect(() => {
     refContainer.current.focus();
     setSearchTerm("");
@@ -62,7 +61,6 @@ export default function SearchForm() {
             id="name"
             value={searchTerm}
             onChange={handleChange}
-            /* autoFocus */
           />
         </div>
       </form>

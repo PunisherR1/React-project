@@ -12,46 +12,21 @@ export default function CocktailList() {
   if (telescopes.length < 1) {
     return (
       <h2 className="section-title">
-        no cocktails matched your search criteria
+        no telescopes matched your search criteria
       </h2>
     );
   }
 
   return (
     <section className="section">
-      <h2 className="section-title">cocktails</h2>
+      <h2 className="section-title">telescopes</h2>
       <div className="telescopes-center">
+        {/* returns telescope component for every object in array,
+         together with it's id and all properties */}
         {telescopes.map((item) => {
           return <Telescope key={item.id} {...item} />;
         })}
       </div>
     </section>
   );
-
-  /* return (
-    <section className="section">
-      <h2 className="section-title">telescopes</h2>
-      <div className="telescopes-center">
-        {products.map((item) => {
-          const { id, title, price, img } = item;
-          return (
-            <article className="telescope" key={id}>
-              <div className="img-container ">
-                <img src={img} alt={title} />
-              </div>
-              <div className="cocktail-footer">
-                <h3>{title}</h3>
-                <h4>{price}</h4>
-                {/* <p>{info}</p>
-          <Link to={`/cocktail/${id}`} className="btn btn-primary btn-details">
-            details
-          </Link> */
 }
-/* /div>
-            </article>
-          );
-        })}
-      </div>
-    </section>
-  );
-} */

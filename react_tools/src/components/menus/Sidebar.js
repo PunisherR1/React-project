@@ -10,6 +10,7 @@ const Sidebar = () => {
   const { user } = useAuth0();
 
   return (
+    /* assings classes based on whether the state is true */
     <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}>
       <div className="sidebar-header">
         <button className="close-btn" onClick={closeSidebar}>
@@ -26,7 +27,7 @@ const Sidebar = () => {
           );
         })}
         {user && (
-          <li>
+          <li onClick={closeSidebar}>
             <Link to="/profile">Profile</Link>
           </li>
         )}
