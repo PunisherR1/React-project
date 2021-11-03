@@ -15,7 +15,7 @@ Quick Start
 // Install dependencies
 npm install or yarn install
 
-//start the client
+// Start the client
 npm start or yarn start
 
 Runs the app in the development mode.
