@@ -8,8 +8,8 @@ const Submenu = () => {
     location,
   } = useGlobalContext();
 
-  /* get's the location of submenu cointainer,
-   and rerenders everytime sumbmenu content is changed */
+  /* get's the location of submenu container,
+   and rerenders every time submenu content is changed */
   const container = useRef(null);
   const [columns, setColumns] = useState("col-2");
 
