@@ -33,7 +33,7 @@ const CartProvider = ({ children }) => {
     dispatch({ type: "LOADING" });
     const response = await fetch(url);
     const cart = await response.json();
-    console.log("fetched");
+    /* console.log("fetched"); */
     dispatch({ type: "DISPLAY_ITEMS", payload: cart });
   };
 
