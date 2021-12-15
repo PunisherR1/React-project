@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
-import { sublinks, person } from "./data";
+import { person } from "./data/person_data";
+import { sublinks } from "./data/menus_data";
 
 const AppContext = React.createContext();
 
