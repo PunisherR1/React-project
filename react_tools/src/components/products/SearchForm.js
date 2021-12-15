@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import { useGlobalContext } from "../../context";
 import { useRef, useEffect } from "react";
-import { products } from "../../data";
+import { products } from "../../data/products_data";
 
 export default function SearchForm() {
   const { searchTerm, setSearchTerm, setTelescopes, setLoading, telescopes } =
