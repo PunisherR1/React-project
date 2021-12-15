@@ -21,14 +21,14 @@ export default function SearchForm() {
     setTelescopes(results);
     setLoading(false);
   }, [searchTerm, setTelescopes, setLoading]);
-  console.log(setTelescopes);
+  /* console.log(setTelescopes); */
 
   const calculateMostExpensive = (data) => {
     return data.reduce((total, item) => {
       const price = item.price;
       if (price >= total) {
         total = price;
-        console.log(total);
+        /* console.log(total); */
       }
       return total;
     }, 0);

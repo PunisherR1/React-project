@@ -5,7 +5,7 @@ import Telescope from "./Telescope";
 
 export default function CocktailList() {
   const { telescopes, loading } = useGlobalContext();
-  console.log(telescopes);
+  /* console.log(telescopes); */
   if (loading) {
     return <Loading />;
   }
