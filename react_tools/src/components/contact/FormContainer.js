@@ -24,7 +24,8 @@ const Form = () => {
       setPerson({ name: "", email: "", message: "" });
     }
     if (people.length >= 3) {
-      setPeople([]);
+      const lastPerson = { ...person, id: new Date().getTime().toString() };
+      setPeople([lastPerson]);
     }
   };
 
