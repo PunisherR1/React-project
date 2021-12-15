@@ -7,7 +7,7 @@ import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 const Person = () => {
   const { people, index, setIndex } = useGlobalContext();
 
-  /*  changes state when we come to the end or begining of array*/
+  /*  changes state when we come to the end or beginning of array*/
   useEffect(() => {
     const lastIndex = people.length - 1;
     if (index < 0) {
