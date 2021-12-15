@@ -9,7 +9,7 @@ const Profile = () => {
   const { closeSubmenu } = useGlobalContext();
   const { user, isAuthenticated, isLoading, getAccessTokenSilently } =
     useAuth0();
-  const { userMetadata, setUserMetadata } = useState(null);
+  const { setUserMetadata } = useState(null);
 
   useEffect(() => {
     const getUserMetadata = async () => {
@@ -34,7 +34,7 @@ const Profile = () => {
     if (isLoading === false) {
       getUserMetadata();
     }
-  }, [isLoading]);
+  }, [isLoading, getAccessTokenSilently, setUserMetadata, user.sub]);
 
   if (isLoading) {
     return (
