@@ -1,6 +1,6 @@
 # React-project
 
-Dynamic and functional website showcasing Space's(company) products, collaboratos and additional info.
+Dynamic and functional website showcasing Space's(company) products, collaborators and additional info.
 
 ## Description
 
@@ -24,7 +24,7 @@ Open http://localhost:3000 to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-You can also check the webiste wihout forking on:
+You can also check the website without forking on:
 https://react-project-components-showcase.netlify.app/
 
 ## Technologies
