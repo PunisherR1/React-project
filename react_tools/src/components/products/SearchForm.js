@@ -34,7 +34,7 @@ export default function SearchForm() {
     }, 0);
   };
 
-  /* calculates most expensive item everytime telescope array is changed */
+  /* calculates most expensive item every time telescope array is changed */
   const mostExpensive = useMemo(
     () => calculateMostExpensive(telescopes),
     [telescopes]
