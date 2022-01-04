@@ -652,6 +652,9 @@ Profile Page
   align-items: center;
   flex-flow: column;
 }
+.profile-center {
+  text-align: center;
+}
 .p-4 {
   margin-bottom: 20px;
 }

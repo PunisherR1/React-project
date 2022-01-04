@@ -47,7 +47,7 @@ const Profile = () => {
   return (
     isAuthenticated && (
       <div className="profile" onMouseOver={closeSubmenu}>
-        <div>
+        <div className="profile-center">
           <h2>{user.name}</h2>
           <p>{user.email}</p>
         </div>
