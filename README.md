@@ -22,11 +22,11 @@ In the project directory, you can run:
 
 Quick Start
 
-// Install dependencies
+// Install dependencies:
 
     npm install or yarn install
 
-// Start the client
+// Start the client:
 
     npm start or yarn start
 
